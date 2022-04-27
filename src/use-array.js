@@ -55,3 +55,27 @@ console.log(resultScore); // [45,80,90,66,88]
 console.clear();
 
 // q8. check if there is a student with the score lower than 50
+student.forEach((item) => (item.score < 50 ? console.log(item.name) : null));
+
+// q9. Compute students' average score
+let avg = 0;
+let result = 0;
+for (const st of student) {
+  avg += st.score;
+  result = avg / student.length;
+}
+
+console.log(result); // 73.8
+console.clear();
+
+// q10. make a string containing all the scores
+// result should be: '45,80,90,66,88'
+
+const makeString = [];
+student.forEach((item) => makeString.push(item.score));
+console.log(makeString.join(",")); // 45,80,90,66,88
+console.clear();
+
+// q10-bonus sorted in ascending order
+console.log(makeString.sort().join(",")); //45,66,80,88,90
+console.clear();
